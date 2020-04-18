@@ -1,0 +1,8 @@
+div.timer {
+    display: none;
+    font-weight: bold;
+}
+
+.correct-answer, .incorrect-answer {
+    display: none;
+}
