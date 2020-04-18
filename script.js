@@ -11,17 +11,17 @@ var score = 0;
 var questions = [
     "Which of the following are NOT data types you can use in Javascript?",
     "What is a local variable?",
-    "What is a global variable?",
-    "",
-    ""
+    "What does Math.random() return?",
+    "If var x = '2' + 2, what is the value of x?",
+    "Which of the following code will log numbers 1 to 12?"
 ];
 
 var answerChoices = [
-    {'a': , 'b': , 'c': , 'd': },
-    {'a': , 'b': , 'c': , 'd': },
-    {'a': , 'b': , 'c': , 'd': },
-    {'a': , 'b': , 'c': , 'd': },
-    {'a': , 'b': , 'c': , 'd': }
+    {'a': '', 'b': '', 'c': '', 'd': ''},
+    {'a': '', 'b': '', 'c': '', 'd': ''},
+    {'a': '', 'b': '', 'c': '', 'd': ''},
+    {'a': '', 'b': '', 'c': '', 'd': ''},
+    {'a': '', 'b': '', 'c': '', 'd': ''}
 ];
 
 var answers = [
