@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
     
@@ -31,24 +32,29 @@
                    </p> 
                 </div>
 
-                <!-- Correct answer alert-->
-                <div class="alert alert-success correct-answer alert-dismissible fade show" role="alert">
-                    Correct!
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                  </div> 
-
-                  <!-- Incorrect answer alert-->
-                <div class="alert alert-danger incorrect-answer alert-dismissible fade show" role="alert">
-                    Incorrect!
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                </div>
-
+ 
                 <!-- Quiz Content -->
                 <div class="col-sm-10">
+
+                    <!-- Correct answer alert-->
+                    <div class="alert alert-success correct-answer" role="alert">
+                        Correct!
+                    </div> 
+
+                    <!-- Incorrect answer alert-->
+                    <div class="alert alert-danger incorrect-answer" role="alert">
+                        Incorrect!
+                    </div>
+
                     <p id="question"></p>
-                    <ul id="answer-choices"></ul>
+
+                    <ul id="answer-choices">
+                        <li><button class="btn btn-primary choice" value="a"></button></li>
+                        <li><button class="btn btn-primary choice" value="b"></button></li>
+                        <li><button class="btn btn-primary choice" value="c"></button></li>
+                        <li><button class="btn btn-primary choice" value="d"></button></li>
+                    </ul>
+
                 </div>
 
                 <!-- Results Content -->

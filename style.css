@@ -1,8 +1,17 @@
+ul  {
+    list-style: none;
+}
+
 div.timer {
     display: none;
     font-weight: bold;
 }
 
-.correct-answer, .incorrect-answer, .restart-btn, .scoreboard-pg, .quiz-results {
+.correct-answer, .incorrect-answer, .restart-btn, .scoreboard-pg, .quiz-results, ul#answer-choices {
     display: none;
 }
+
+.correct-answer, .incorrect-answer {
+    margin: auto;
+}
+
