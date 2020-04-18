@@ -25,50 +25,65 @@
                 <button type="button" class="btn btn-success btn-lg m-5 start-quiz-btn" onclick="startQuiz()">START</button>
 
                 <!-- Timer -->
-                <div class="col-sm-2 col-lg-4 timer">
-                   <p>
+                <div class="timer">
+                    <p>
                     Timer: <span id="minutes">10</span>:<span id="seconds">00</span>
-                   </p> 
+                    </p> 
                 </div>
 
- 
+            </div>
+
+        </div>
+
+        <div class="row">
+
                 <!-- Quiz Content -->
-                <div class="col-sm-10">
 
-                    <!-- Correct answer alert-->
-                    <div class="alert alert-success correct-answer" role="alert">
-                        Correct!
-                    </div> 
+                    <div class="col-md-10 quiz-content">
+                                                
+                        <div class="col-md-6 col-sm-3">
 
-                    <!-- Incorrect answer alert-->
-                    <div class="alert alert-danger incorrect-answer" role="alert">
-                        Incorrect!
+                            <!-- Correct answer alert-->
+                            <div class="alert alert-success correct-answer" role="alert">
+                                Correct!
+                            </div> 
+
+                            <!-- Incorrect answer alert-->
+                            <div class="alert alert-danger incorrect-answer" role="alert">
+                                Incorrect!
+                            </div>
+
+                        </div>    
+
+                        <p id="question"></p>
+
+                            <ul id="answer-choices">
+                                <li><button class="btn btn-primary choice" value="a"></button></li>
+                                <li><button class="btn btn-primary choice" value="b"></button></li>
+                                <li><button class="btn btn-primary choice" value="c"></button></li>
+                                <li><button class="btn btn-primary choice" value="d"></button></li>
+                            </ul>
+    
                     </div>
 
-                    <p id="question"></p>
+        </div>
 
-                    <ul id="answer-choices">
-                        <li><button class="btn btn-primary choice" value="a"></button></li>
-                        <li><button class="btn btn-primary choice" value="b"></button></li>
-                        <li><button class="btn btn-primary choice" value="c"></button></li>
-                        <li><button class="btn btn-primary choice" value="d"></button></li>
-                    </ul>
 
-                </div>
+        <div class="row">
+            
+            <div class="col-md-12 text-center">
 
                 <!-- Results Content -->
-                <div class="col-sm-10 quiz-results">
+                <div class="col-sm-12 quiz-results">
                     <p id="show-score"></p>
 
-                    <form onsubmit="storeHighScore()">
-                        <input type="text" placeholder="Initials Here"/>
-                        <input type="submit" class="btn btn-success submit-score" value="Save Score"/>
-                    </form>
-                    
+                    <input type="text" placeholder="Initials Here"/>
+                    <input type="submit" class="btn btn-success submit-score" value="Save Score"/>
+        
                 </div>
 
                 <!-- Score page -->
-                <div class="col-sm-10 scoreboard-pg">
+                <div class="col-sm-12 scoreboard-pg">
                     <h2>Scoreboard</h2>
                     <ul class="score-list"></ul>
                 </div>

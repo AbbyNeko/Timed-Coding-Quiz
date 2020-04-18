@@ -192,8 +192,10 @@ $(".choice").on("click", function() {
 });
 
 //Event Listener for saving score and initials
-$(".submit-score").on("click", function(){
+$(".submit-score").on("click", function(evt){
 
+    evt.preventDefault();
+    
     //Saves score and initials
     
     

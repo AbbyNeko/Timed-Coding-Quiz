@@ -11,7 +11,14 @@ div.timer {
     display: none;
 }
 
-.correct-answer, .incorrect-answer {
-    margin: auto;
+.quiz-content {
+    margin-left: 4em;
 }
 
+#answer-choices {
+    padding-left: 0;
+}
+
+.correct-answer, .incorrect-answer {
+    margin-left: -20px !important;
+}
