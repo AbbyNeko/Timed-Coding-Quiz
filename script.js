@@ -134,7 +134,7 @@ $(".choice").on("click", function() {
 
     alert.show();
 
-    //set interval to have alert fade out after 3 secs
+    //set interval to have alert fade out after 1.5 secs
     var fadeOutTimer = setInterval(function() {
 
         alert.fadeOut('slow');
@@ -145,7 +145,7 @@ $(".choice").on("click", function() {
 
         clearInterval(fadeOutTimer);
 
-    }, 2000);
+    }, 1500);
 
 
 });
