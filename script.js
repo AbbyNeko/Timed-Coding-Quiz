@@ -61,7 +61,9 @@ function startQuiz() {
         //keeps track of seconds passed
         secondsCounter++;
 
-        if(secondsCounter == 60) {
+        if(secondsCounter == 1 && minutesLeft == 10) {
+            minutesLeft--;
+        }else if(secondsCounter == 60) {
             minutesCounter++;
             minutesLeft--;
             secondsCounter = 0;
@@ -69,10 +71,9 @@ function startQuiz() {
 
         secondsLeft = 60 - secondsCounter;
 
-        updateTimer(minutesLeft, secondsLeft);
+        updateTimer();
 
     }, 1000);
-
 
 
 }
@@ -82,12 +83,13 @@ function startQuiz() {
 function updateTimer() {
 
     //updates minutes span
+    $("#minutes").text(minutesLeft);
 
     //updates second span
     if(secondsLeft < 10) {
-
+        $("#seconds").text("0"+secondsLeft);
     } else {
-
+        $("#seconds").text(secondsLeft);
     }
 
 }
@@ -109,6 +111,21 @@ function updateQuizContent() {
     for(choice in answerSet) {
         $(".choice[value="+ choice +"]").text(answerSet[choice]);        
     }
+
+}
+
+//Show Results page
+function showResults() {
+
+    //clear timer
+
+    //hide timer
+
+
+    //hide question and answer choices
+
+
+    //show results content and score
 
 }
 
@@ -146,6 +163,22 @@ $(".choice").on("click", function() {
         clearInterval(fadeOutTimer);
 
     }, 1500);
+
+    //If on last question, go to Results page
+    if(questionIndex == 9) {
+        showResults();
+    }
+
+
+});
+
+//Event Listener for saving score and initials
+$(".submit-score").on("click", function(){
+
+    //Saves score and initials
+    
+    
+    //gets local storage array highScores and populates Scoreboard page
 
 
 });
