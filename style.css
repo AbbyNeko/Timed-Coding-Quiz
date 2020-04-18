@@ -3,6 +3,6 @@ div.timer {
     font-weight: bold;
 }
 
-.correct-answer, .incorrect-answer {
+.correct-answer, .incorrect-answer, .restart-btn, .scoreboard-pg, .quiz-results {
     display: none;
 }
