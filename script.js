@@ -55,6 +55,7 @@ function startQuiz() {
 
     updateQuizContent();
     $("ul#answer-choices").show();
+    $(".reminder").show();
 
     quizTimer = setInterval(function(){
 
@@ -72,6 +73,12 @@ function startQuiz() {
         secondsLeft = 60 - secondsCounter;
 
         updateTimer();
+
+        //If time runs out, run showResults()
+        if(minutesLeft == 0 && secondsLeft == 0) {
+            showResults();
+            clearInterval(quizTimer);
+        } 
 
     }, 1000);
 
@@ -118,14 +125,21 @@ function updateQuizContent() {
 function showResults() {
 
     //clear timer
+    $("#minutes").empty();
+    $("#seconds").empty();
 
     //hide timer
+    $(".timer").hide();
 
 
     //hide question and answer choices
-
+    $("#question").hide();
+    $("#answer-choices").hide();
+    $(".reminder").hide();
 
     //show results content and score
+    $("#show-score").text("Your final score is "+score+"/5");
+    $(".quiz-results").show()
 
 }
 
@@ -147,9 +161,13 @@ $(".choice").on("click", function() {
         score++;
     } else {
         alert = $(".incorrect-answer");
+        //decrease time as penalty
+        decreaseTime();
     }
 
     alert.show();
+
+    console.log("question # "+questionIndex+", score - "+score);
 
     //set interval to have alert fade out after 1.5 secs
     var fadeOutTimer = setInterval(function() {
@@ -158,16 +176,17 @@ $(".choice").on("click", function() {
 
         //update quiz to next question
         questionIndex++;
-        updateQuizContent();
+        
+        //If on last question, go to Results page
+        if(questionIndex == 4) {
+            showResults();
+        } else {
+            updateQuizContent();
+        }
 
         clearInterval(fadeOutTimer);
 
     }, 1500);
-
-    //If on last question, go to Results page
-    if(questionIndex == 9) {
-        showResults();
-    }
 
 
 });

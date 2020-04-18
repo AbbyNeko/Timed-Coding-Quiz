@@ -19,7 +19,7 @@
 
                 <h1 class="m-3">Javascript Coding Quiz</h1>
                 <p class="initial-instructions">Ready to test your skills? Press the Start button below.</p>
-                <p>Keep in mind that every wrong answer takes away from the remaining time you have left in the quiz.</p>
+                <p class="reminder">Every wrong answer takes away from the remaining time you have left in the quiz. If you completely run out of time, the quiz will automatically end.</p>
 
                 <!-- Start Button -->
                 <button type="button" class="btn btn-success btn-lg m-5 start-quiz-btn" onclick="startQuiz()">START</button>
@@ -58,7 +58,7 @@
 
                 <!-- Results Content -->
                 <div class="col-sm-10 quiz-results">
-                    <p>You have reached the end. Your final score is ....</p>
+                    <p id="show-score"></p>
 
                     <form onsubmit="storeHighScore()">
                         <input type="text" placeholder="Initials Here"/>
@@ -70,7 +70,7 @@
                 <!-- Score page -->
                 <div class="col-sm-10 scoreboard-pg">
                     <h2>Scoreboard</h2>
-                    <ul></ul>
+                    <ul class="score-list"></ul>
                 </div>
 
                 <!-- Replay Button -->
