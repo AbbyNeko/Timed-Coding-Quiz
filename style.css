@@ -22,3 +22,8 @@ div.timer {
 .correct-answer, .incorrect-answer {
     margin-left: -20px !important;
 }
+
+.submit-score {
+    padding:5px;
+    margin-bottom: 20px;
+}
