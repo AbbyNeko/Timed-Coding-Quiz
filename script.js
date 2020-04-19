@@ -39,6 +39,7 @@ function startQuiz() {
     minutesLeft = 5; //5 min quiz
     secondsLeft = 0;
     score = 0;
+    questionIndex = 0;
 
     //hide start button and initial instructions
     $(".start-quiz-btn").hide();
@@ -52,6 +53,7 @@ function startQuiz() {
     $(".timer").show();
 
     updateQuizContent();
+    $("#question").show();
     $("ul#answer-choices").show();
     $(".reminder").show();
 
@@ -149,6 +151,9 @@ function showResults() {
     //show results content and score
     $("#show-score").text("Your final score is "+score+"/5");
     $(".quiz-results").show()
+
+    //empty out initials input
+    $("#initials").val("");
 
 }
 
