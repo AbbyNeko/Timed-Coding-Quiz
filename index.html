@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coding Assessment</title>
+    <title>JavaScript Coding Quiz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.5.0.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
@@ -17,7 +17,7 @@
 
             <div class="col-md-12 text-center">
 
-                <h1 class="m-3">Javascript Coding Quiz</h1>
+                <h1 class="m-3">JavaScript Coding Quiz</h1>
                 <p class="initial-instructions">Ready to test your skills? Press the Start button below.</p>
                 <p class="reminder">Every wrong answer takes away from the remaining time you have left in the quiz. If you completely run out of time, the quiz will automatically end.</p>
 
@@ -27,7 +27,7 @@
                 <!-- Timer -->
                 <div class="timer">
                     <p>
-                    Timer: <span id="minutes">10</span>:<span id="seconds">00</span>
+                    Timer: <span id="minutes">5</span>:<span id="seconds">00</span>
                     </p> 
                 </div>
 
@@ -77,7 +77,7 @@
                 <div class="col-sm-12 quiz-results">
                     <p id="show-score"></p>
 
-                    <input type="text" placeholder="Initials Here"/>
+                    <input type="text" id="initials" placeholder="Initials Here"/>
                     <input type="submit" class="btn btn-success submit-score" value="Save Score"/>
         
                 </div>

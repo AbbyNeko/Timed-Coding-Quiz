@@ -1,9 +1,6 @@
 
 var quizTimer;
-var minutesCounter = 0;
-var secondsCounter = 0;
-
-var minutesLeft = 10; //10 min quiz
+var minutesLeft = 5; //5 min quiz
 var secondsLeft = 0;
 
 var score = 0;
@@ -34,15 +31,12 @@ var answers = [
     "b"
 ];
 
-var userAnswers = [];
 
 //Starts Timer and shows first question
 function startQuiz() {
 
     //resetting variables in case of restart
-    minutesCounter = 0;
-    secondsCounter = 0;
-    minutesLeft = 10; //10 min quiz
+    minutesLeft = 5; //5 min quiz
     secondsLeft = 0;
     score = 0;
 
@@ -50,7 +44,7 @@ function startQuiz() {
     $(".start-quiz-btn").hide();
     $(".initial-instructions").hide();
 
-    //shows Timer and starts interval. Stops interval at 10 minutes.
+    //shows Timer and starts interval. Stops interval at 5 minutes.
     $(".timer").show();
 
     updateQuizContent();
@@ -59,18 +53,17 @@ function startQuiz() {
 
     quizTimer = setInterval(function(){
 
-        //keeps track of seconds passed
-        secondsCounter++;
-
-        if(secondsCounter == 1 && minutesLeft == 10) {
+        if(secondsLeft == 0 && minutesLeft == 5) {
+            secondsLeft = 60 - 1;
             minutesLeft--;
-        }else if(secondsCounter == 60) {
-            minutesCounter++;
-            minutesLeft--;
-            secondsCounter = 0;
+        }else {
+            secondsLeft--;
         }
-
-        secondsLeft = 60 - secondsCounter;
+        
+        if(secondsLeft < 0) {
+            minutesLeft--;
+            secondsLeft = 60 + secondsLeft;
+        }
 
         updateTimer();
 
@@ -104,8 +97,20 @@ function updateTimer() {
 //Penalizes user with 30 seconds less.
 function decreaseTime() {
 
+    //console.log('about to penalize. seconds left - '+secondsLeft);
+
+    secondsLeft = secondsLeft - 30;
+
+    if(secondsLeft < 0) {
+        secondsLeft = 60 + secondsLeft;
+        minutesLeft--;
+    }
+
+   // console.log('minutes left - '+minutesLeft+', seconds left - '+secondsLeft);
+
 }
 
+//Updates question and answer choices
 function updateQuizContent() {
 
     //show question div
@@ -150,9 +155,6 @@ $(".choice").on("click", function() {
 
     var answerChosen = this.value;
 
-    //push answer to userAnswer array to keep track of choices
-    userAnswers.push(answerChosen);
-
     var alert = '';
 
     //show answer div
@@ -179,6 +181,7 @@ $(".choice").on("click", function() {
         
         //If on last question, go to Results page
         if(questionIndex == 4) {
+            alert.hide();
             showResults();
         } else {
             updateQuizContent();
@@ -196,10 +199,22 @@ $(".submit-score").on("click", function(evt){
 
     evt.preventDefault();
     
-    //Saves score and initials
-    
-    
     //gets local storage array highScores and populates Scoreboard page
+    var savedScores = localStorage.getItem("highScores");
+    if(savedScores) {
+        savedScores = JSON.parse(savedScores);
+    }
+
+    //Saves score and initials
+    var scoreObj = {};
+    scoreObj.initials = $("#initials").val();
+    scoreObj.score = score;
+     
+    savedScores.push(scoreObj);
+
+    localStorage.setItem("highScores", JSON.stringify(savedScores));
+
+    //shows scores list
 
 
 });
