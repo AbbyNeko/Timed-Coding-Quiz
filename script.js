@@ -189,9 +189,10 @@ $(".choice").on("click", function() {
         questionIndex++;
         
         //If on last question, go to Results page
-        if(questionIndex == 4) {
+        if(questionIndex == 5) {
             alert.hide();
             showResults();
+            clearInterval(quizTimer);
         } else {
             updateQuizContent();
         }
