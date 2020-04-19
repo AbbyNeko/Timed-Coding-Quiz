@@ -7,7 +7,7 @@ div.timer {
     font-weight: bold;
 }
 
-.correct-answer, .incorrect-answer, .restart-btn, .scoreboard-pg, .quiz-results, ul#answer-choices {
+.correct-answer, .incorrect-answer, .scoreboard-pg, .quiz-results, ul#answer-choices {
     display: none;
 }
 
@@ -23,7 +23,12 @@ div.timer {
     margin-left: -20px !important;
 }
 
-.submit-score {
+#initials {
     padding:5px;
     margin-bottom: 20px;
+}
+
+.board {
+    margin:auto;
+    margin-top: 40px;
 }

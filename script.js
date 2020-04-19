@@ -44,6 +44,10 @@ function startQuiz() {
     $(".start-quiz-btn").hide();
     $(".initial-instructions").hide();
 
+    //Hide these elements just in case of restart
+    $(".scoreboard-pg").hide();
+    $(".quiz-results").hide();
+
     //shows Timer and starts interval. Stops interval at 5 minutes.
     $(".timer").show();
 
@@ -169,7 +173,7 @@ $(".choice").on("click", function() {
 
     alert.show();
 
-    console.log("question # "+questionIndex+", score - "+score);
+    //console.log("question # "+questionIndex+", score - "+score);
 
     //set interval to have alert fade out after 1.5 secs
     var fadeOutTimer = setInterval(function() {
@@ -198,11 +202,16 @@ $(".choice").on("click", function() {
 $(".submit-score").on("click", function(evt){
 
     evt.preventDefault();
+    //hide results content
+    $(".quiz-results").hide();
     
     //gets local storage array highScores and populates Scoreboard page
     var savedScores = localStorage.getItem("highScores");
+
     if(savedScores) {
         savedScores = JSON.parse(savedScores);
+    } else {
+        savedScores = [];
     }
 
     //Saves score and initials
@@ -214,7 +223,20 @@ $(".submit-score").on("click", function(evt){
 
     localStorage.setItem("highScores", JSON.stringify(savedScores));
 
+    //Add individal scores and users to ul
+    var userList = '';
+    var scoreList = '';
+
+    for(var i = 0; i < savedScores.length; i++) {
+        userList += "<li><strong>"+ savedScores[i].initials +"</strong></li>";
+        scoreList += "<li>"+ savedScores[i].score +"</li>";
+    }
+
+    $(".score-list").html(scoreList);
+    $(".user-list").html(userList);
+
     //shows scores list
+    $(".scoreboard-pg").show();
 
 
 });
