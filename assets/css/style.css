@@ -7,6 +7,12 @@ div.timer {
     font-weight: bold;
 }
 
+.feedback {
+    display: block;
+    height: 50px;
+    margin:1em 0 1em 0;
+}
+
 .correct-answer, .incorrect-answer, .scoreboard-pg, .quiz-results, ul#answer-choices {
     display: none;
 }
