@@ -35,6 +35,7 @@ var answers = [
 //Starts Timer and shows first question
 function startQuiz() {
 
+
     //resetting variables in case of restart
     minutesLeft = 5; //5 min quiz
     secondsLeft = 0;
@@ -139,7 +140,9 @@ function showResults() {
     $("#minutes").empty();
     $("#seconds").empty();
 
-    //hide timer
+    //reset timer value & hide timer
+    $("#minutes").text("5");
+    $("#seconds").text("00");
     $(".timer").hide();
 
 
