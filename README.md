@@ -1,8 +1,8 @@
 ## Timed Coding Quiz
 
-The Time Coding Quiz quizzes you on the basics of JavaScript. The app have a live timer counting down the remaining time and every wrong answer deducts time.
+The Time Coding Quiz quizzes you on the basics of JavaScript. The app will have a live timer counting down the remaining time and every wrong answer deducts time.
 
-<img src="assets\img\coding-quiz.PNG" alt="screenshot of coding quiz"/>
+<img src="assets\img\coding-quiz.PNG" alt="screenshot of coding quiz" width="100%"/>
 
 After you finish the quiz, your score is saved to your LocalStorage and you will be able to compare you score to other users.
 
